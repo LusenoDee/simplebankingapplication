@@ -4,7 +4,7 @@ public class simplebankingapplication {
 
     public static void main(String[] args) {
         double balance = 1000.0; // initial balance
-        double saving balance=0.0//iitial saving
+        double saving balance=0.0//initial saving
         double depositAmount, withdrawalAmount;
         String name;
 
