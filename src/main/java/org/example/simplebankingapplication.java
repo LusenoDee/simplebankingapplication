@@ -4,6 +4,7 @@ public class simplebankingapplication {
 
     public static void main(String[] args) {
         double balance = 1000.0; // initial balance
+        double saving balance=0.0//iitial saving
         double depositAmount, withdrawalAmount;
         String name;
 
@@ -22,7 +23,10 @@ public class simplebankingapplication {
             System.out.println("1. Check balance");
             System.out.println("2. Deposit money");
             System.out.println("3. Withdraw money");
-            System.out.println("4. Exit");
+            System.out.println("4. Check savings balance");
+             System.out.println("5. Deposit to savings");
+             System.out.println("6. Withdraw from savings");
+            System.out.println("7. Exit");
 
             int choice = scanner.nextInt();
 
@@ -50,8 +54,32 @@ public class simplebankingapplication {
                         System.out.println("Your current balance is $" + balance);
                     }
                     break;
+                                       case 4: // check savings balance
+                       System.out.println("Your current savings balance is $" + savingsBalance);
+                       break;
 
-                case 4: // exit
+                   case 5: // deposit to savings
+                       System.out.print("Enter the deposit amount: ");
+                       depositAmount = scanner.nextDouble();
+                       savingsBalance += depositAmount;
+                       System.out.println("$" + depositAmount + " has been deposited into your savings account.");
+                       System.out.println("Your current savings balance is $" + savingsBalance);
+                       break;
+
+                   case 6: // withdraw from savings
+                       System.out.print("Enter the withdrawal amount: ");
+                       withdrawalAmount = scanner.nextDouble();
+                       if (withdrawalAmount > savingsBalance) {
+                           System.out.println("Insufficient funds. Your current savings balance is $" + savingsBalance);
+                       } else {
+                           savingsBalance -= withdrawalAmount;
+                           System.out.println("$" + withdrawalAmount + " has been withdrawn from your savings account.");
+                           System.out.println("Your current savings balance is $" + savingsBalance);
+                       }
+                       break;
+
+
+                case 7: // exit
                     System.out.println("Thank you for using JamiiBank. Goodbye!");
                     exit = true;
                     break;
